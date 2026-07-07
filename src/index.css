@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #faf3e7;
+  --color-paper-dim: #f2e9d8;
+  --color-ink: #1c2541;
+  --color-ink-soft: #3d4566;
+  --color-ball: #d9622b;
+  --color-ball-bright: #f2814a;
+  --color-court: #2c5f8a;
+  --color-court-bright: #6fa8d8;
+  --color-caramel: #e3a857;
+  --color-sage: #4c7a5e;
+
+  --font-display: 'Archivo Black', 'Be Vietnam Pro', sans-serif;
+  --font-body: 'Be Vietnam Pro', system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  body {
+    background-color: #121a2c;
+    color: #f2ead9;
+  }
+}
+
+::selection {
+  background-color: var(--color-ball);
+  color: var(--color-paper);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-court);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Graph-paper texture used behind the academic section */
+.grid-paper {
+  background-image:
+    linear-gradient(rgba(28, 37, 65, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 37, 65, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .grid-paper {
+    background-image:
+      linear-gradient(rgba(242, 234, 217, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242, 234, 217, 0.08) 1px, transparent 1px);
+  }
+}
